@@ -1,3 +1,3 @@
-document.addEventListener('DOMContentLoaded', function() {
-  
-});
+import './style.css'
+
+console.log("Hello World!");
