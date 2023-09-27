@@ -3,16 +3,47 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Funds</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+
+    <link href="./style.css" rel="stylesheet">
+    <link href="./modal.css" rel="stylesheet">
+
+    <script type="module" src="./index.js"></script>
+    <title>Funds App</title>
   </head>
   <body>
     <div id="app">
       <div class="flex-container">
-        <div class="glassbox">
-          test
-        </div>
+        <div class="glassbox" />
       </div>
     </div>
-    <script type="module" src="./index.js"></script>
+
+    <div id="incomeModal" class="modal">
+      <div class="modal-content">
+        <span class="close-income">&times;</span>
+        <h2>Add Income</h2>
+          <label for="description">Description:</label>
+          <input type="text" class="income-description">
+          <label for="amount">Amount:</label>
+          <input type="number" class="income-amount" required>
+          <button class="income-submit">Add</button>
+      </div>
+    </div>
+
+    <div id="expenseModal" class="modal">
+      <div class="modal-content">
+        <span class="close-expense">&times;</span>
+        <h2>Add Expense</h2>
+          <label for="description">Description:</label>
+          <input type="text" class="expense-description">
+          <label for="amount">Amount:</label>
+          <input type="number" class="expense-amount" required>
+          <button class="expense-submit">Add</button>
+      </div>
+    </div>
+
+
   </body>
 </html>

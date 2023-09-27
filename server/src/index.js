@@ -1,6 +1,7 @@
 import express from 'express';
 import cors from "cors";
 import { PrismaClient } from '@prisma/client';
+import { updateUserBalance } from "./utils.js";
 
 const corsOptions = {
   origin: 'http://localhost:5173',
@@ -43,6 +44,8 @@ app.get('/user/:userId', async (req, res) => {
     },
   });
 
+  updateUserBalance(prisma, userId);
+
   return res.json(userData);
 });
 
@@ -50,6 +53,7 @@ app.get('/user/:userId', async (req, res) => {
 app.post('/income/:userId', async (req, res) => {
   const userId = req.params.userId;
   const { amount, description, categoryId } = req.body;
+
   const newIncome = await prisma.income.create({
     data: {
       amount: parseInt(amount),
@@ -67,6 +71,8 @@ app.post('/income/:userId', async (req, res) => {
     }
   });
 
+  updateUserBalance(prisma, userId);
+
   return res.json(newIncome);
 });
 
@@ -74,6 +80,7 @@ app.post('/income/:userId', async (req, res) => {
 app.post('/expense/:userId', async (req, res) => {
   const userId = req.params.userId;
   const { amount, description, categoryId } = req.body;
+
   const newExpense = await prisma.expense.create({
     data: {
       amount: parseInt(amount),
@@ -90,6 +97,8 @@ app.post('/expense/:userId', async (req, res) => {
       }
     }
   });
+
+  updateUserBalance(prisma, userId);
 
   return res.json(newExpense);
 });

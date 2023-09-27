@@ -1,5 +1,4 @@
 body {
-  height: 100%;
   margin: 0;
   font-family: 'Poppins';
 }
@@ -10,6 +9,19 @@ body {
   align-items: center;
   height: 100vh;
   background-image: url('wallpaper.jpeg');
+}
+
+.row {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.column {
+  display: flex;
+  flex-direction: column;
+  flex-basis: 100%;
+  flex: 1;
 }
 
 .glassbox {
@@ -25,4 +37,52 @@ body {
   -webkit-backdrop-filter: blur(5.2px);
   border: 1px solid rgba(180, 98, 191, 0.24);
   color: white;
+  overflow: scroll;
+}
+
+.user-info {
+  padding: 10px;
+  border-radius: 10px;
+  background: rgba(180, 98, 191, 0.35);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.35);
+  text-align: center;
+  text-transform: uppercase;
+  font-size: 30px;
+}
+
+.actions {
+  padding: 20px;
+  text-align: center;
+  text-transform: uppercase;
+  font-size: 30px;
+}
+
+.incomes-box {
+  margin: 5px;
+  padding: 10px;
+  border-radius: 10px;
+  background: rgba(86, 255, 139, 0.35);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.35);
+}
+
+.expenses-box {
+  margin: 5px;
+  padding: 10px;
+  border-radius: 10px;
+  background: rgba(255, 76, 76, 0.35);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.35);
+}
+
+button {
+  padding: 10px;
+  cursor: pointer;
+  border-radius: 10px;
+  background: rgba(120, 106, 231, 0.35);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.35);
+  border: none;
+  color: white;
+}
+
+button:hover {
+  background: rgba(120, 106, 231, 0.55);
 }
