@@ -103,6 +103,22 @@ app.post('/expense/:userId', async (req, res) => {
   return res.json(newExpense);
 });
 
+// Expenses by category
+app.get('/expense/:categoryId', async (req, res) => {
+  const categoryId = req.params.categoryId;
+  const expenses = await prisma.expense.findMany({
+    where: {
+      category: {
+        id: categoryId
+      }
+    }
+  });
+
+  return res.json(expenses);
+});
+
+// Incomes by category
+
 app.listen(3000, () => {
   console.log('Example app listening on port 3000!');
 });
