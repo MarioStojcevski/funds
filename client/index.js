@@ -50,7 +50,7 @@ const handleAddTransaction = (type, { amount, description }) => {
       'Content-Type': 'application/json',
     },
     body: JSON.stringify({
-      categoryId: '1',
+      categoryId: '4',
       description,
       amount
     }),
